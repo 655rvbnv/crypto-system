@@ -33,6 +33,7 @@
 *.vbs
 *.html
 *.c
-*.c++
+*.cs
+*.cpp
 *.js
 *.java
