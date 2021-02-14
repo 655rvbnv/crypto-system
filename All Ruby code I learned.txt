@@ -1,0 +1,851 @@
+for loop:
+
+for num in 1...15
+  puts num
+end
+
+while loop:
+
+counter = 1
+while counter < 11
+  puts counter
+  counter = counter + 1
+end
+
+The .times iterator
+
+10.times {print "I love noodles"}
+
+The Fifty Looper
+
+i = 1
+while i <= 50
+  print i
+  i += 1
+end
+
+
+iterator:
+
+i = 20
+loop do
+  i -= 1
+  print "#{i}"
+  break if i <= 0
+end
+
+odd skipper:
+
+i = 20
+loop do
+  i -= 1
+  next if i % 2 != 0
+  print "#{i}"
+  break if i <= 0
+end
+
+even skipper:
+
+i = 20
+loop do
+  i -= 1
+  next if i % 2 == 0
+  print "#{i}"
+  break if i <= 0
+end
+
+an array:
+
+my_array = [ 1, 2, 3, 4, 5]
+
+the .each iterator:
+
+array = [1,2,3,4,5]
+
+array.each do |x|
+  x += 10
+  print "#{x}"
+end
+
+the multiplying iterator:
+
+odds = [1,3,5,7,9]
+
+odds.each do |odds|
+  print odds * 2
+end
+
+until looper:
+
+i = 1
+until i == 51
+  print i
+  i += 1
+end
+
+The Word Looper:
+
+i = 0
+loop do
+  print "Ruby!"
+  i += 1
+  break if i == 30
+end
+
+The .times iterator:
+
+30.times { print "Ruby!" }
+
+A 2D Array:
+
+my_2d_array = [[67, 67, 78, 89,78], [6756,7686, 7476, 5678, 6767]]
+
+A Hash:
+
+family = { "Homer" => "dad",
+  "Marge" => "mom",
+  "Lisa" => "sister",
+  "Maggie" => "sister",
+  "Abe" => "grandpa",
+  "Santa's Little Helper" => "dog"
+}
+
+Array Iterator:
+
+languages = ["HTML", "CSS", "JavaScript", "Python", "Ruby"]
+
+languages.each { |x| puts x}
+
+Multi Dimensional Array Iterator:
+
+s = [["ham", "swiss"], ["turkey", "cheddar"], ["roast beef", "gruyere"]]
+
+s.each { |sub_array| sub_array.each { |element| puts element }}
+
+Hash Iterator:
+
+secret_identities = {
+  "The Batman" => "Bruce Wayne",
+  "Superman" => "Clark Kent",
+  "Wonder Woman" => "Diana Prince",
+  "Freakazoid" => "Dexter Douglas"
+}
+
+secret_identities.each do |hero, person|
+  puts "#{hero}: #{person}"
+end
+
+Value iterator:
+
+lunch_order = {
+  "Ryan" => "wonton soup",
+  "Eric" => "hamburger",
+  "Jimmy" => "sandwich",
+  "Sasha" => "salad",
+  "Cole" => "taco"
+}
+
+lunch_order.each do |person, order| 
+  puts order
+end
+
+A splat method:
+
+def what_up(greeting, *friends)
+  friends.each { |friend| puts "#{greeting}, #{friend}!" }
+end
+
+what_up("What up", "Ian", "Zoe", "Zenas", "Eleanor")
+
+A simple Sorter:
+
+my_array = [3, 4, 8, 7, 1, 6, 5, 9, 2]
+
+my_array.sort!
+puts my_array
+
+Books Sorter(alphabeticly):
+
+# library sorting code
+books = ["Charlie and the Chocolate Factory", "War and Peace", "Utopia", "A Brief History of Time", "A Wrinkle in Time"]
+
+books.sort!
+puts books
+
+
+Comparer With "<=>":
+
+book_1 = "A Wrinkle in Time"
+
+book_2 = "A Brief History of Time"
+
+book_1 <=> book_2
+
+Desending Sorter:
+
+books.sort! { |firstBook, secondBook| secondBook <=> firstBook }
+
+A parametered Method:
+
+def welcome(name)
+  return "Hello, #{name}"
+end
+
+welcome("Keshav")
+
+Array Squarer:
+
+my_array = [1, 2, 3, 4, 5]
+
+my_array.each do |num|
+  puts num * num
+end
+
+Hash Iterator:
+
+matz = { "First name" => "Yukihiro",
+  "Last name" => "Matsumoto",
+  "Age" => 47,
+  "Nationality" => "Japanese",
+  "Nickname" => "Matz"
+}
+
+matz.each do |key, value|
+  puts value
+end
+
+A Symbol:
+
+menagerie = { :foxes => 2,
+  :giraffe => 1,
+  :weezards => 17,
+  :elves => 1,
+  :canaries => 4,
+  :ham => 1
+}
+
+Object ID Getter:
+
+puts "string".object_id
+puts "string".object_id
+
+puts :symbol.object_id
+puts :symbol.object_id
+
+Symbol And String Converter:
+
+:sasquatch.to_s
+# ==> "sasquatch"
+ 
+"sasquatch".to_sym
+# ==> :sasquatch
+
+A string To symbol Thing(or something):
+
+strings = ["HTML", "CSS", "JavaScript", "Python", "Ruby"]
+symbols = []
+
+strings.each do |s| 
+ symbols.push(s.to_sym)
+end 
+print symbols
+
+A string To symbol thing(alternative):
+
+strings = ["HTML", "CSS", "JavaScript", "Python", "Ruby"]
+symbols = []
+
+strings.each do |s| 
+ symbols.push(s.intern)
+end 
+print symbols
+
+Updated Hash:
+
+movies = {
+  children: => "Moana",
+  scifi: => "Mortal Kombat",
+  history: "Lincoln"
+}
+
+Selector Code:
+
+movie_ratings = {
+  memento: 3,
+  primer: 3.5,
+  the_matrix: 5,
+  truman_show: 4,
+  red_dawn: 1.5,
+  skyfall: 4,
+  alex_cross: 2,
+  uhf: 1,
+  lion_king: 3.5
+}
+
+good_movies = movie_ratings.select { |name, rating| rating > 3 }
+
+
+"each_key" User:
+
+movie_ratings = {
+  memento: 3,
+  primer: 3.5,
+  the_matrix: 3,
+  truman_show: 4,
+  red_dawn: 1.5,
+  skyfall: 4,
+  alex_cross: 2,
+  uhf: 1,
+  lion_king: 3.5
+}
+movie_ratings.each_key {|title| puts title}
+
+
+"each_value" User:
+
+movie_ratings = {
+  memento: 3,
+  primer: 3.5,
+  the_matrix: 3,
+  truman_show: 4,
+  red_dawn: 1.5,
+  skyfall: 4,
+  alex_cross: 2,
+  uhf: 1,
+  lion_king: 3.5
+}
+movie_ratings.each_value {|rating| puts ratingmovie_ratings = {
+  memento: 3,
+  primer: 3.5,
+  the_matrix: 3,
+  truman_show: 4,
+  red_dawn: 1.5,
+  skyfall: 4,
+  alex_cross: 2,
+  uhf: 1,
+  lion_king: 3.5
+}
+movie_ratings.each_key {|title| puts title}
+
+Super Compact Ruby Thing:
+
+ruby_is_eloquent = true
+ruby_is_ugly = false
+
+puts "Ruby is eloquent!" if ruby_is_eloquent
+puts "Ruby's not ugly!" unless ruby_is_ugly
+
+Ternery if\else(or something):
+
+puts 3 < 4 ? "3 is less than 4!" : "3 is not less than 4."
+
+A small Program:
+
+puts "Hello there!"
+greeting = gets.chomp
+
+# Add your case statement below!
+case greeting
+  when "English" then puts "Hello!"
+  when "French" then puts "Bonjour!"
+  when "German" then puts "Guten Tag!"
+  when "Finnish" then puts "Haloo!"
+  else puts "i Do Not Know That language!"
+end
+
+Something with variables:
+
+favorite_book = nil
+puts favorite_book
+
+favorite_book ||= "Cat's Cradle"
+puts favorite_book
+
+favorite_book ||= "Why's (Poignant) Guide to Ruby"
+puts favorite_book
+
+favorite_book = "Why's (Poignant) Guide to Ruby"
+puts favorite_book
+
+
+Implicit return method:
+
+def multiple_of_three(n)
+   n % 3 == 0 ? "True" : "False"
+end
+
+
+Short circuting thing:
+
+def a
+  puts "A was evaluated!"
+  return true
+end
+
+def b
+  puts "B was also evaluated!"
+  return true
+end
+
+puts a || b
+puts "------"
+puts a && b
+
+Even putter:
+
+my_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+my_array.each { |num| puts num unless num % 2 !=0 }
+
+Letter putter:
+
+"L".upto("P") {|let| puts let}
+
+"respond_to?()" User:
+
+age = 26
+
+
+age.respond_to?(:next)
+
+"<<" User:
+
+alphabet = ["a", "b", "c"]
+alphabet << "d"
+
+caption = "A giraffe surrounded by "
+caption << "weezards!" 
+puts caption
+
+"#{}" User:
+
+favorite_things = ["Ruby", "Orange Juice", "candy"]
+
+puts "A few of my favorite things:"
+
+favorite_things.each do |thing|
+  puts "I love #{thing}!"
+end
+
+Another Small Program:
+
+puts "What's your favorite language?"
+language = gets.chomp
+
+case language
+when "Ruby"
+  puts "Ruby is great for web apps!"
+when "Python"
+  puts "Python is great for science."
+when "JavaScript"
+  puts "JavaScript makes websites awesome."
+when "HTML"
+  puts "HTML is what websites are made of!"
+when  "CSS"
+  puts "CSS makes websites pretty."
+else
+  puts "I don't know that language!"
+end
+
+"collect" User:
+
+fibs = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+
+# Add your code below!
+
+double = Proc.new {|x| x * 2}
+
+doubled_fibs = fibs.collect(&double)
+
+puts doubled_fibs
+
+"yield" User:
+
+def block_test
+  puts "We're in the method!"
+  puts "Yielding to the block..."
+  yield
+  puts "We're back in the method!"
+end
+
+block_test { puts ">>> We're in the block!" }
+
+yield with parameters:
+
+def yield_name(name)
+  puts "In the method! Let's yield."
+  yield("Kim")
+  puts "In between the yields!"
+  yield(name)
+  puts "Block complete! Back in the method."
+end
+
+My own yield infused method:
+
+def double(n)
+  yield(n)
+    puts n * n
+end
+
+A "Proc" User:
+
+floats = [1.2, 3.45, 0.91, 7.727, 11.42, 482.911]
+# Write your code below this line!
+
+round_down = Proc.new { |x| x.floor }
+
+# Write your code above this line!
+ints = floats.collect(&round_down)
+print ints
+
+yield_name("Eric") { |n| puts "My name is #{n}." }
+
+# Now call the method with your name!
+yield_name("Keshav") { |n| puts "My name is #{n}." }
+
+Something:
+
+def greeter
+  yield
+end
+
+phrase = Proc.new { puts "Hello there!" }
+
+greeter(&phrase)
+
+Easy Proc Call:
+
+hi = Proc.new {puts "Hello!"}
+hi.call
+
+Ruby Magic:
+
+numbers_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+strings_array = numbers_array.map(&:to_s)
+
+"lambda" User:
+
+def lambda_demo(a_lambda)
+  puts "I'm the method!"
+  a_lambda.call
+end
+
+lambda_demo(lambda { puts "I'm the lambda!" })
+
+Lambda Magic:
+
+my_array = ["raindrops", :kettles, "whiskers", :mittens, :packages]
+
+# Add your code below!
+symbol_filter = lambda {|x| x.is_a? Symbol}
+symbols = my_array.select(&symbol_filter)
+
+my_array = ["raindrops", :kettles, "whiskers", :mittens, :packages]
+
+puts symbols
+
+Int Finder:
+
+odds_n_ends = [:weezard, 42, "Trady Blix", 3, true, 19, 12.345]
+
+# Add your code below!
+
+ints = odds_n_ends.select {|x|x.is_a? Integer}
+
+puts ints
+
+Proc Master:
+
+ages = [23, 101, 7, 104, 11, 94, 100, 121, 101, 70, 44]
+
+# Add your code below!
+under_100 = Proc.new {|num| num < 100}
+
+Proc Goodness
+
+ages = [23, 101, 7, 104, 11, 94, 100, 121, 101, 70, 44]
+
+# Add your code below!
+under_100 = Proc.new { |x| x < 100 }
+youngsters = ages.select(&under_100)
+
+puts youngsters
+
+lambda Goodness:
+
+crew = {
+  captain: "Picard",
+  first_officer: "Riker",
+  lt_cdr: "Data",
+  lt: "Worf",
+  ensign: "Ro",
+  counselor: "Troi",
+  chief_engineer: "LaForge",
+  doctor: "Crusher"
+}
+# Add your code below!
+first_half = lambda { |x,y| y<"M"}
+
+More lambda Goodness:
+
+crew = {
+  captain: "Picard",
+  first_officer: "Riker",
+  lt_cdr: "Data",
+  lt: "Worf",
+  ensign: "Ro",
+  counselor: "Troi",
+  chief_engineer: "LaForge",
+  doctor: "Crusher"
+}
+# Add your code below!
+first_half = lambda { |x,y| y<"M"}
+a_to_m = crew.select(&first_half)
+
+puts a_to_m
+
+Empty Class:
+
+class Person
+end
+
+Scope thing:
+
+class Computer
+  $manufacturer = "Mango Computer, Inc."
+  @@files = {hello: "Hello, world!"}
+  
+  def initialize(username, password)
+    @username = username
+    @password = password
+  end
+  
+  def current_user
+    @username
+  end
+  
+  def self.display_files
+    @@files
+  end
+end
+
+# Make a new Computer instance:
+hal = Computer.new("Dave", 12345)
+
+puts "Current user: #{hal.current_user}"
+# @username belongs to the hal instance.
+
+puts "Manufacturer: #{$manufacturer}"
+# $manufacturer is global! We can get it directly.
+
+puts "Files: #{Computer.display_files}"
+# @@files belongs to the Computer class.
+
+Scope Example:
+
+class MyClass
+  $my_variable = "Hello!"
+end
+
+puts $my_variable
+
+More Parametres in class method!:
+
+class Person
+  def initialize(name, age, profession)
+    @name = name
+    @age = age
+    @profession = profession
+  end
+end
+
+Instance Counter:
+
+class Person
+  # Set your class variable to 0 on line 3
+  @@people_count = 0
+
+  def initialize(name)
+    @name = name
+    # Increment your class variable on line 8
+    @@people_count += 1
+  end
+
+  def self.number_of_instances
+    # Return your class variable on line 13
+    return @@people_count
+  end
+end
+
+matz = Person.new("Yukihiro")
+dhh = Person.new("David")
+
+puts "Number of Person instances: #{Person.number_of_instances}"
+
+Inheritance Example:
+
+class ApplicationError
+  def display_error
+    puts "Error! Error!"
+  end
+end
+
+class SuperBadError < ApplicationError
+end
+
+err = SuperBadError.new
+err.display_error
+
+Method overwriter (of a class):
+
+class Creature
+  def initialize(name)
+    @name = name
+  end
+  
+  def fight
+    return "Punch to the chops!"
+  end
+end
+
+# Add your code below!
+class Dragon < Creature
+  def initialize(name)
+    @name = name
+  end
+
+ def fight
+   return "Breathes fire!"
+  end
+end
+
+"super" User:
+
+  def fight
+    return "Punch to the chops!"
+  end
+end
+
+# Add your code below!
+class Dragon < Creature
+  def initialize(name)
+    @name = name
+  end
+
+ def fight
+   puts "Insted Of Breathing Fire..."
+   super
+  end
+end
+
+A Module:
+
+module Action
+  def jump
+    @distance = rand(4) + 2
+    puts "I jumped forward #{@distance} feet!"
+  end
+end
+
+A mixin:
+
+module Action
+  def jump
+    @distance = rand(4) + 2
+    puts "I jumped forward #{@distance} feet!"
+  end
+end
+
+class Rabbit
+  include Action
+  attr_reader :name
+  def initialize(name)
+    @name = name
+  end
+end
+
+class Cricket
+  include Action
+  attr_reader :name
+  def initialize(name)
+    @name = name
+  end
+end
+
+peter = Rabbit.new("Peter")
+jiminy = Cricket.new("Jiminy")
+
+peter.jump
+jiminy.jump
+
+Imitating Multiple Inheritance:
+
+class MartialArts
+  def swordsman
+    puts "I'm a swordsman."
+  end
+end
+
+
+
+class Ninja
+  include MartialArts
+  def initialize(clan)
+    @clan = clan
+  end
+end
+
+class Samurai
+  include MartialArts
+  def initialize(shogun)
+    @shogun = shogun
+  end
+end
+
+Time Displayer:
+
+module ThePresent
+  def now
+    puts "It's #{Time.new.hour > 12 ? Time.new.hour - 12 : Time.new.hour}:#{Time.new.min} #{Time.new.hour > 12 ? 'PM' : 'AM'} (GMT)."
+  end
+end
+
+class TheHereAnd
+  extend ThePresent
+end
+
+TheHereAnd.now
+
+Public Accesses Example:
+
+class Application
+  attr_accessor :status
+  def initialize; end
+  # Add your method here!
+  public
+  def print_status
+    puts "All systems go!"
+  end
+    private
+    def password
+      return 12345
+    end
+  end
+
+Mixin Magic:
+
+module Languages
+  FAVE = "Ruby"  # This is what you typed before, right? :D
+end
+
+class Master
+  include Languages
+  def initialize; end
+  def victory
+    puts FAVE
+  end
+end
+
+total = Master.new
+total.victory
